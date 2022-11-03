@@ -1,0 +1,16 @@
+domain: yendo.github.io
+layout:
+- go.kubebuilder.io/v3
+projectName: foo
+repo: github.com/yendo/sample-controller
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: yendo.github.io
+  group: samplecontroller
+  kind: Foo
+  path: github.com/yendo/sample-controller/api/v1
+  version: v1
+version: "3"
