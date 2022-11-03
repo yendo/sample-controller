@@ -1,0 +1,12 @@
+apiVersion: samplecontroller.yendo.github.io/v1
+kind: Foo
+metadata:
+  labels:
+    app.kubernetes.io/name: foo
+    app.kubernetes.io/instance: foo-sample
+    app.kubernetes.io/part-of: foo
+    app.kuberentes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: foo
+  name: foo-sample
+spec:
+  # TODO(user): Add fields here
