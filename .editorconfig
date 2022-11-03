@@ -13,3 +13,6 @@ trim_trailing_whitespace: true
 # Tab indentation (no size specified)
 [Makefile]
 indent_style = tab
+
+[boilerplate.go.txt]
+insert_final_newline = false
