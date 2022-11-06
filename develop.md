@@ -30,7 +30,7 @@ asdf global kustomize 4.5.7
 Init Kubebuilder
 
 ``` bash
-kubebuilder init --domain yendo.github.io --repo github.com/yendo/foo
+kubebuilder init --domain yendo.github.io --repo github.com/yendo/sample-controller --project-name foo
 ```
 
 Create API
@@ -47,7 +47,17 @@ kubebuilder create webhook --group samplecontroller --version v1 --kind Foo --pr
 make manifests
 ```
 
+Edit config/manager/manager.yaml
+
+``` diff
+  image: controller:latest
++ imagePullPolicy: IfNotPresent
+  name: manager
+```
+
 ## Develop
+
+Make
 
 ``` bash
 make docker-build
@@ -55,6 +65,8 @@ kind load docker-image controller:latest
 make install
 make deploy
 ```
+
+Check controller-manager pod
 
 ``` bash
 kubectl get pod -n foo-system
